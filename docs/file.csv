@@ -1,0 +1,5 @@
+Key,Type,Options
+brandName,string,length=6
+headquarters,string,max length=12; min length=4
+numberOfLocations,number,"min=1; max=1000 "
+yearFounded,number,min= 1600; max= current year

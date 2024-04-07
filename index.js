@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+require('dotenv').config();
+require("./connection/db");
+var express = require("express");
+var cors = require("cors");
+var bodyParser = require("body-parser");
+var app = express();
+var brandsRouter_1 = require("./routers/brandsRouter");
+app.use(cors({ origin: true, credentials: true }));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use('/', brandsRouter_1.default);
+app.listen(process.env.port, function () { return console.log("I'm listening to port ".concat(process.env.port, "!")); });
